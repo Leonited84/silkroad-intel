@@ -24,7 +24,7 @@ const POST_DATES = {
 };
 
 export default defineConfig({
-  site: 'https://www.worldmonitor.app',
+  site: 'https://intel.silkroadleo.com',
   base: '/blog',
   output: 'static',
   integrations: [

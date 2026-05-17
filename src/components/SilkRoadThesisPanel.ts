@@ -6,6 +6,7 @@ interface ThesisSection {
   label: string;
   title: string;
   body: string;
+  link?: { text: string; url: string };
 }
 
 const DEFAULT_SECTIONS: ThesisSection[] = [
@@ -24,14 +25,14 @@ const DEFAULT_SECTIONS: ThesisSection[] = [
     title: 'Market Maker — Not Agent, Not Consultant',
     body: 'We create transactions between Arab importers and Chinese suppliers. We protect our position through exclusive agreements and technical facilitation. One deal proves everything.',
   },
+  {
+    label: 'NEXT STEP',
+    title: 'Get In Position',
+    body: 'This dashboard is a living proof of concept. Every data point is real. If you are an Arab importer, a Chinese manufacturer, or an investor building bridges — the conversation starts here.',
+    link: { text: 'Visit silkroadleo.com →', url: 'https://silkroadleo.com' },
+  },
 ];
 
-/**
- * SilkRoadThesisPanel — Persistent sidebar panel explaining the core thesis.
- *
- * Displays The Big Mouth, The Gap, and Market Maker positioning
- * as an always-visible reminder of what this platform exists to solve.
- */
 export class SilkRoadThesisPanel extends Panel {
   private sections: ThesisSection[];
   private currentIndex = 0;
@@ -55,6 +56,10 @@ export class SilkRoadThesisPanel extends Panel {
     if (!section) return;
     const countLabel = `${this.currentIndex + 1}/${this.sections.length}`;
 
+    const linkHtml = section.link
+      ? `<a href="${escapeHtml(section.link.url)}" target="_blank" rel="noopener noreferrer" class="sr-thesis-link">${escapeHtml(section.link.text)}</a>`
+      : '';
+
     const html = `
 <div class="sr-thesis-card">
   <div class="sr-thesis-header">
@@ -63,6 +68,7 @@ export class SilkRoadThesisPanel extends Panel {
   </div>
   <h3 class="sr-thesis-title">${escapeHtml(section.title)}</h3>
   <p class="sr-thesis-body">${escapeHtml(section.body)}</p>
+  ${linkHtml}
   <div class="sr-thesis-nav">
     ${this.sections.map((_, i) => `
       <button class="sr-thesis-dot${i === this.currentIndex ? ' active' : ''}" data-index="${i}" aria-label="Section ${i + 1}"></button>
@@ -72,7 +78,6 @@ export class SilkRoadThesisPanel extends Panel {
 
     this.content.innerHTML = html;
 
-    // Wire dot navigation
     this.content.querySelectorAll('.sr-thesis-dot').forEach((dot) => {
       dot.addEventListener('click', (e) => {
         const idx = Number((e.currentTarget as HTMLElement).dataset.index);
@@ -88,7 +93,7 @@ export class SilkRoadThesisPanel extends Panel {
     this.autoRotateTimer = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.sections.length;
       this.render();
-    }, 15000); // 15 seconds per section
+    }, 15000);
   }
 
   public destroy(): void {
