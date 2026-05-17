@@ -924,6 +924,145 @@ const COMMODITY_MOBILE_MAP_LAYERS: MapLayers = {
 };
 
 // ============================================
+// SILKROAD variant — intel.silkroadleo.com
+// MENA-China trade corridor: commodities, shipping, chokepoints, compliance.
+// Derived from commodity variant, narrowed to Arab importer → China supplier flows.
+// ============================================
+const SILKROAD_PANELS: Record<string, PanelConfig> = {
+  map: { name: 'Trade Corridor Map', enabled: true, priority: 1 },
+  'live-news': { name: 'MENA Trade Headlines', enabled: true, priority: 1 },
+  commodities: { name: 'Live Commodity Prices', enabled: true, priority: 1 },
+  'macro-signals': { name: 'Market Radar', enabled: true, priority: 1 },
+  'gulf-economies': { name: 'Gulf & OPEC Economies', enabled: true, priority: 1 },
+  'china-trade': { name: 'China Export & Factory Data', enabled: true, priority: 1 },
+  halal: { name: 'Halal Food & Agri Trade', enabled: true, priority: 1 },
+  energy: { name: 'Energy Markets', enabled: true, priority: 1 },
+  'base-metals': { name: 'Base Metals (Cu, Al, Zn, Ni)', enabled: true, priority: 1 },
+  'critical-minerals': { name: 'Critical Minerals', enabled: true, priority: 2 },
+  'mining-news': { name: 'Mining & Materials', enabled: true, priority: 2 },
+  'supply-chain': { name: 'Shipping & Chokepoints', enabled: true, priority: 1 },
+  'commodity-regulation': { name: 'Trade Policy & Compliance', enabled: true, priority: 2 },
+  sanctions: { name: 'Sanctions & Tariffs', enabled: true, priority: 2 },
+  'gcc-investments': { name: 'GCC Sovereign Investment', enabled: true, priority: 2 },
+  'trade-policy': { name: 'Trade Policy', enabled: true, priority: 2, premium: 'locked' as const },
+  'sanctions-pressure': { name: 'Sanctions Pressure', enabled: true, priority: 2 },
+  economic: { name: 'Macro Stress', enabled: true, priority: 2 },
+  monitors: { name: 'My Monitors', enabled: true, priority: 2 },
+  heatmap: { name: 'Sector Heatmap', enabled: true, priority: 2 },
+  'world-clock': { name: 'World Clock', enabled: true, priority: 2 },
+};
+
+const SILKROAD_MAP_LAYERS: MapLayers = {
+  gpsJamming: false,
+  satellites: false,
+  conflicts: false,
+  bases: false,
+  cables: true,
+  pipelines: true,
+  hotspots: false,
+  ais: true,
+  nuclear: false,
+  irradiators: false,
+  sanctions: true,
+  weather: true,
+  economic: true,
+  waterways: true,
+  outages: true,
+  cyberThreats: false,
+  datacenters: false,
+  protests: false,
+  flights: false,
+  military: false,
+  natural: true,
+  spaceports: false,
+  minerals: true,
+  fires: true,
+  ucdpEvents: false,
+  displacement: false,
+  climate: true,
+  startupHubs: false,
+  cloudRegions: false,
+  accelerators: false,
+  techHQs: false,
+  techEvents: false,
+  stockExchanges: false,
+  financialCenters: false,
+  centralBanks: false,
+  commodityHubs: true,
+  gulfInvestments: false,
+  positiveEvents: false,
+  kindness: false,
+  happiness: false,
+  speciesRecovery: false,
+  renewableInstallations: false,
+  tradeRoutes: true,
+  iranAttacks: false,
+  ciiChoropleth: false,
+  resilienceScore: false,
+  dayNight: false,
+  miningSites: true,
+  processingPlants: true,
+  commodityPorts: true,
+  webcams: false,
+  diseaseOutbreaks: false,
+};
+
+const SILKROAD_MOBILE_MAP_LAYERS: MapLayers = {
+  gpsJamming: false,
+  satellites: false,
+  conflicts: false,
+  bases: false,
+  cables: false,
+  pipelines: false,
+  hotspots: false,
+  ais: true,
+  nuclear: false,
+  irradiators: false,
+  sanctions: false,
+  weather: false,
+  economic: true,
+  waterways: false,
+  outages: true,
+  cyberThreats: false,
+  datacenters: false,
+  protests: false,
+  flights: false,
+  military: false,
+  natural: true,
+  spaceports: false,
+  minerals: true,
+  fires: false,
+  ucdpEvents: false,
+  displacement: false,
+  climate: false,
+  startupHubs: false,
+  cloudRegions: false,
+  accelerators: false,
+  techHQs: false,
+  techEvents: false,
+  stockExchanges: false,
+  financialCenters: false,
+  centralBanks: false,
+  commodityHubs: true,
+  gulfInvestments: false,
+  positiveEvents: false,
+  kindness: false,
+  happiness: false,
+  speciesRecovery: false,
+  renewableInstallations: false,
+  tradeRoutes: false,
+  iranAttacks: false,
+  ciiChoropleth: false,
+  resilienceScore: false,
+  dayNight: false,
+  miningSites: true,
+  processingPlants: false,
+  commodityPorts: true,
+  webcams: false,
+  diseaseOutbreaks: false,
+};
+
+// ============================================
 // ENERGY variant — energy.worldmonitor.app
 // Pipelines, storage, chokepoints, fuel shortages, disruption timeline.
 // See docs/internal/global-energy-flow-parity-and-surpass.md (not committed).
@@ -1092,6 +1231,7 @@ const ENERGY_MOBILE_MAP_LAYERS: MapLayers = {
 export const ALL_PANELS: Record<string, PanelConfig> = {
   ...HAPPY_PANELS,
   ...COMMODITY_PANELS,
+  ...SILKROAD_PANELS,
   ...ENERGY_PANELS,
   ...TECH_PANELS,
   ...FINANCE_PANELS,
@@ -1104,6 +1244,7 @@ export const VARIANT_DEFAULTS: Record<string, string[]> = {
   tech:      Object.keys(TECH_PANELS),
   finance:   Object.keys(FINANCE_PANELS),
   commodity: Object.keys(COMMODITY_PANELS),
+  silkroad:  Object.keys(SILKROAD_PANELS),
   energy:    Object.keys(ENERGY_PANELS),
   happy:     Object.keys(HAPPY_PANELS),
 };
@@ -1122,6 +1263,10 @@ export const VARIANT_PANEL_OVERRIDES: Partial<Record<string, Partial<Record<stri
     map:         { name: 'Global Tech Map' },
     'live-news': { name: 'Tech Headlines' },
     insights:    { name: 'AI Insights' },
+  },
+  silkroad: {
+    map:         { name: 'Trade Corridor Map' },
+    'live-news': { name: 'MENA Trade Headlines' },
   },
   commodity: {
     map:         { name: 'Commodity Map' },
@@ -1185,11 +1330,13 @@ export const DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy'
     ? TECH_MAP_LAYERS
     : SITE_VARIANT === 'finance'
       ? FINANCE_MAP_LAYERS
-      : SITE_VARIANT === 'commodity'
-        ? COMMODITY_MAP_LAYERS
-        : SITE_VARIANT === 'energy'
-          ? ENERGY_MAP_LAYERS
-          : FULL_MAP_LAYERS;
+      : SITE_VARIANT === 'silkroad'
+        ? SILKROAD_MAP_LAYERS
+        : SITE_VARIANT === 'commodity'
+          ? COMMODITY_MAP_LAYERS
+          : SITE_VARIANT === 'energy'
+            ? ENERGY_MAP_LAYERS
+            : FULL_MAP_LAYERS;
 
 export const MOBILE_DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy'
   ? HAPPY_MOBILE_MAP_LAYERS
@@ -1197,11 +1344,13 @@ export const MOBILE_DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy'
     ? TECH_MOBILE_MAP_LAYERS
     : SITE_VARIANT === 'finance'
       ? FINANCE_MOBILE_MAP_LAYERS
-      : SITE_VARIANT === 'commodity'
-        ? COMMODITY_MOBILE_MAP_LAYERS
-        : SITE_VARIANT === 'energy'
-          ? ENERGY_MOBILE_MAP_LAYERS
-          : FULL_MOBILE_MAP_LAYERS;
+      : SITE_VARIANT === 'silkroad'
+        ? SILKROAD_MOBILE_MAP_LAYERS
+        : SITE_VARIANT === 'commodity'
+          ? COMMODITY_MOBILE_MAP_LAYERS
+          : SITE_VARIANT === 'energy'
+            ? ENERGY_MOBILE_MAP_LAYERS
+            : FULL_MOBILE_MAP_LAYERS;
 
 /** Maps map-layer toggle keys to their data-freshness source IDs (single source of truth). */
 export const LAYER_TO_SOURCE: Partial<Record<keyof MapLayers, DataSourceId[]>> = {

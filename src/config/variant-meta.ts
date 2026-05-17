@@ -12,6 +12,29 @@ export interface VariantMeta {
 }
 
 export const VARIANT_META: { full: VariantMeta; [k: string]: VariantMeta } = {
+  silkroad: {
+    title: 'Silk Road Intel — MENA-China Trade Corridor Dashboard',
+    description: 'Real-time intelligence on MENA-China trade corridors: commodity prices, shipping routes, chokepoints, sanctions, factory data, and market signals. Built for Arab importers and Chinese suppliers.',
+    keywords: 'MENA trade, China sourcing, commodity prices, shipping routes, Hormuz, Suez, halal trade, Gulf economies, OPEC, trade corridor, import intelligence, factory data, sanctions monitor',
+    url: 'https://intel.silkroadleo.com/',
+    siteName: 'Silk Road Intel',
+    shortName: 'SilkRoad',
+    subject: 'MENA-China Trade Corridor Intelligence',
+    classification: 'Trade Intelligence Dashboard, Sourcing Platform',
+    categories: ['business', 'finance'],
+    features: [
+      'Real-time commodity price tracking',
+      'MENA-China shipping route monitoring',
+      'Strategic chokepoint alerts (Hormuz, Suez, Malacca)',
+      'Gulf & OPEC economy dashboard',
+      'China export & factory data',
+      'Halal food trade monitoring',
+      'Sanctions & compliance tracker',
+      'Base metals & critical minerals',
+      'AIS tanker & bulk carrier tracking',
+      'Trade policy & tariff monitoring',
+    ],
+  },
   full: {
     title: 'World Monitor - Real-Time Global Intelligence Dashboard',
     description: 'Real-time global intelligence dashboard with live news, markets, military tracking, infrastructure monitoring, and geopolitical data. OSINT in one view.',
