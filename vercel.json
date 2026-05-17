@@ -1,6 +1,4 @@
 {
-  "buildCommand": "npm run build:silkroad",
-  "outputDirectory": "dist",
   "rewrites": [
     { "source": "/((?!api|assets|blog|favico|map-styles|data|textures|sw\\.js|workbox-[a-f0-9]+\\.js|manifest\\.webmanifest|offline\\.html|robots\\.txt|sitemap\\.xml).+)", "destination": "/index.html" }
   ]
