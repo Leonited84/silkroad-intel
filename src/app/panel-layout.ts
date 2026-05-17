@@ -85,6 +85,7 @@ import {
   AAIISentimentPanel,
   EnergyCrisisPanel,
   SilkRoadThesisPanel,
+  ChinaTradeDataPanel,
 } from '@/components';
 import { SatelliteFiresPanel } from '@/components/SatelliteFiresPanel';
 import { focusInvestmentOnMap } from '@/services/investments-focus';
@@ -1240,6 +1241,10 @@ export class PanelLayoutManager implements AppModule {
 
     if (this.shouldCreatePanel('gulf-economies') && !this.ctx.panels['gulf-economies']) {
       this.ctx.panels['gulf-economies'] = new GulfEconomiesPanel();
+    }
+
+    if (this.shouldCreatePanel('china-trade') && !this.ctx.panels['china-trade']) {
+      this.ctx.panels['china-trade'] = new ChinaTradeDataPanel();
     }
 
     if (this.shouldCreatePanel('grocery-basket') && !this.ctx.panels['grocery-basket']) {

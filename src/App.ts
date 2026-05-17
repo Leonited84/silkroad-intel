@@ -35,6 +35,7 @@ import type { HormuzPanel } from '@/components/HormuzPanel';
 import type { StrategicPosturePanel } from '@/components/StrategicPosturePanel';
 import type { StrategicRiskPanel } from '@/components/StrategicRiskPanel';
 import type { GulfEconomiesPanel } from '@/components/GulfEconomiesPanel';
+import type { ChinaTradeDataPanel } from '@/components/ChinaTradeDataPanel';
 import type { GroceryBasketPanel } from '@/components/GroceryBasketPanel';
 import type { BigMacPanel } from '@/components/BigMacPanel';
 import type { FuelPricesPanel } from '@/components/FuelPricesPanel';
@@ -312,6 +313,10 @@ export class App {
     if (shouldPrime('gulf-economies')) {
       const panel = this.state.panels['gulf-economies'] as GulfEconomiesPanel | undefined;
       if (panel) primeTask('gulf-economies', () => panel.fetchData());
+    }
+    if (shouldPrime('china-trade')) {
+      const panel = this.state.panels['china-trade'] as ChinaTradeDataPanel | undefined;
+      if (panel) primeTask('china-trade', () => panel.fetchData());
     }
     if (shouldPrime('grocery-basket')) {
       const panel = this.state.panels['grocery-basket'] as GroceryBasketPanel | undefined;

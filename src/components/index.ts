@@ -105,3 +105,4 @@ export * from './WsbTickerScannerPanel';
 export * from './ResilienceWidget';
 export * from './EnergyCrisisPanel';
 export * from './SilkRoadThesisPanel';
+export { ChinaTradeDataPanel } from './ChinaTradeDataPanel';
