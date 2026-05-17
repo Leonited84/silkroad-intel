@@ -1,13 +1,13 @@
 {
   "app": {
-    "title": "World Monitor",
-    "description": "Global Situation with AI Insights"
+    "title": "Silk Road Intel",
+    "description": "The bridge between China's factory floor and the Middle East's import appetite"
   },
   "shell": {
-    "documentTitle": "World Monitor — Real-Time Global Intelligence Dashboard",
-    "metaDescription": "Real-time global intelligence platform. Featured in WIRED. Used by 2M+ people across 190 countries. Conflicts, markets, military, OSINT in one view.",
+    "documentTitle": "Silk Road Intel — MENA-China Trade Corridor Dashboard",
+    "metaDescription": "Market intelligence for Arab importers and Chinese suppliers. Real-time commodity prices, shipping routes, chokepoints, factory data, sanctions, and trade policy.",
     "offlineTitle": "You're Offline",
-    "offlineMessage": "World Monitor requires an internet connection for real-time intelligence data.",
+    "offlineMessage": "Silk Road Intel requires an internet connection for live trade data.",
     "offlineRetry": "Retry"
   },
   "widgets": {
@@ -223,7 +223,7 @@
     "filterSources": "Filter sources...",
     "sourcesEnabled": "{{enabled}}/{{total}} enabled",
     "finance": "FINANCE",
-    "commodity": "COMMODITY",
+    "commodity": "TRADE INTEL",
     "energy": "ENERGY",
     "toggleTheme": "Toggle dark/light mode",
     "panelDisplayCaption": "Choose which panels to show on the dashboard",
@@ -281,11 +281,12 @@
     "panelCatDeals": "Deals & Institutional",
     "panelCatGulfMena": "Gulf & MENA",
     "panelCatTradePolicy": "Trade Policy",
-    "panelCatCommodityPrices": "Prices & Markets",
-    "panelCatMining": "Mining & Supply Chain",
-    "panelCatCommodityEcon": "Economy & Trade",
+    "panelCatCommodityPrices": "Live Prices",
+    "panelCatMining": "Mining & Supply",
+    "panelCatCommodityEcon": "Corridor Economics",
     "panelCatHappyNews": "Good News",
-    "panelCatHappyPlanet": "Planet & Giving"
+    "panelCatHappyPlanet": "Planet & Giving",
+    "silkroad": "SILK ROAD"
   },
   "panels": {
     "liveNews": "Live News",
@@ -320,7 +321,7 @@
     "commodities": "Metals & Materials",
     "economic": "Macro Stress",
     "tradePolicy": "Trade Policy",
-    "supplyChain": "Supply Chain",
+    "supplyChain": "Shipping & Chokepoints",
     "finance": "Financial",
     "tech": "Technology",
     "crypto": "Crypto",
@@ -367,11 +368,11 @@
       "anomalies": "Anomalies"
     },
     "techReadiness": "Tech Readiness Index",
-    "gccInvestments": "GCC Investments",
+    "gccInvestments": "GCC Sovereign Investment",
     "geoHubs": "Geopolitical Hubs",
     "liveWebcams": "Live Webcams",
     "windyWebcams": "Windy Live Webcam",
-    "gulfEconomies": "Gulf Economies",
+    "gulfEconomies": "Gulf & OPEC Economies",
     "groceryBasket": "Grocery Index",
     "groceryItem": "Item",
     "bigmac": "Real Big Mac Index",
@@ -393,7 +394,19 @@
     "consumerPrices": "Consumer Prices",
     "fearGreed": "Fear & Greed",
     "marketBreadth": "Market Breadth",
-    "climateNews": "Climate News"
+    "climateNews": "Climate News",
+    "chinaTrade": "China Export & Factory Data",
+    "halalTrade": "Halal Food & Agri Trade",
+    "baseMetals": "Base Metals (Cu, Al, Zn, Ni)",
+    "criticalMinerals": "Critical Minerals & Battery Metals",
+    "miningNews": "Mining & Materials",
+    "commodityRegulation": "Trade Policy & Compliance",
+    "sanctionsMonitor": "Sanctions & Tariffs Monitor",
+    "tradeCorridorMap": "Trade Corridor Map",
+    "menaHeadlines": "MENA Trade Headlines",
+    "marketRadar": "Market Radar",
+    "livePrices": "Live Commodity Prices",
+    "energyMarkets": "Energy Markets"
   },
   "commands": {
     "prefixes": {
@@ -417,7 +430,8 @@
       "america": "Americas",
       "africa": "Africa",
       "latam": "Latin America",
-      "oceania": "Oceania"
+      "oceania": "Oceania",
+      "china": "China"
     },
     "tips": {
       "map": "Type a country name to fly there on the map",
@@ -3260,5 +3274,28 @@
     "or": "or enter a custom server",
     "generatingVisualization": "Building visualization...",
     "visualizationFailed": "Visualization failed"
+  },
+  "silkroad": {
+    "welcomeTitle": "The Bridge Nobody Occupies",
+    "welcomeSubtitle": "34 countries. One consumption machine. Zero local manufacturing.",
+    "welcomeBody": "The Middle East imports $1.2T+ annually in construction, medtech, edtech, food, pharma, and military hardware — but produces almost nothing locally. China has the factories. We have the trust. This is the gap.",
+    "thesis": {
+      "bigMouth": {
+        "title": "The Big Mouth",
+        "body": "The Middle East functions as a single consumption machine across 34 countries. It imports construction materials, medical equipment, educational technology, media equipment, food products, military hardware, and pharmaceuticals — but produces very little and innovates even less locally."
+      },
+      "theGap": {
+        "title": "The Gap Nobody Occupies",
+        "body": "China has massive manufacturing capacity. The Arab world represents a significant consumer market. But there is an enormous gap between them: language barriers, trust dynamics, halal certification requirements, relationship-first buying culture, and mismatched payment norms."
+      },
+      "advantage": {
+        "title": "Your Competitive Advantage",
+        "body": "Lebanese-born. Arabic fluent. Western-educated. AI-enabled. We understand Arab buyer psychology and can navigate Chinese factory culture. We are not agents. We are market makers."
+      }
+    },
+    "marketMaker": {
+      "title": "Market Maker — Not Agent, Not Consultant",
+      "body": "We create transactions between Arab importers and Chinese suppliers. We protect our position through exclusive agreements and technical facilitation. One deal proves everything."
+    }
   }
 }

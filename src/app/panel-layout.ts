@@ -84,6 +84,7 @@ import {
   WsbTickerScannerPanel,
   AAIISentimentPanel,
   EnergyCrisisPanel,
+  SilkRoadThesisPanel,
 } from '@/components';
 import { SatelliteFiresPanel } from '@/components/SatelliteFiresPanel';
 import { focusInvestmentOnMap } from '@/services/investments-focus';
@@ -930,6 +931,9 @@ export class PanelLayoutManager implements AppModule {
     this.createNewsPanel('politics', 'panels.politics');
     this.createNewsPanel('tech', 'panels.tech');
     this.createNewsPanel('finance', 'panels.finance');
+
+    // Silk Road thesis panel — core positioning for MENA-China trade variant
+    this.createPanel('silkroad-thesis', () => new SilkRoadThesisPanel());
 
     this.createPanel('heatmap', () => new HeatmapPanel());
     this.createPanel('markets', () => new MarketPanel());

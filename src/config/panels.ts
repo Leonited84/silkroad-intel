@@ -931,6 +931,7 @@ const COMMODITY_MOBILE_MAP_LAYERS: MapLayers = {
 const SILKROAD_PANELS: Record<string, PanelConfig> = {
   map: { name: 'Trade Corridor Map', enabled: true, priority: 1 },
   'live-news': { name: 'MENA Trade Headlines', enabled: true, priority: 1 },
+  'silkroad-thesis': { name: 'The Bridge Nobody Occupies', enabled: true, priority: 1 },
   commodities: { name: 'Live Commodity Prices', enabled: true, priority: 1 },
   'macro-signals': { name: 'Market Radar', enabled: true, priority: 1 },
   'gulf-economies': { name: 'Gulf & OPEC Economies', enabled: true, priority: 1 },

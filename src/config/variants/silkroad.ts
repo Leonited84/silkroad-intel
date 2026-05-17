@@ -17,6 +17,8 @@ export const DEFAULT_PANELS: Record<string, PanelConfig> = {
   // Core
   map: { name: 'Trade Corridor Map', enabled: true, priority: 1 },
   'live-news': { name: 'MENA Trade Headlines', enabled: true, priority: 1 },
+  // Thesis / positioning (core differentiation)
+  'silkroad-thesis': { name: 'The Bridge Nobody Occupies', enabled: true, priority: 1 },
   // Markets
   commodities: { name: 'Live Commodity Prices', enabled: true, priority: 1 },
   'macro-signals': { name: 'Market Radar', enabled: true, priority: 1 },
