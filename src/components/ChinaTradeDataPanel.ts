@@ -13,16 +13,16 @@ export class ChinaTradeDataPanel extends Panel {
     if (!this.element?.isConnected) return;
     this.showLoading('Loading trade data...');
 
-    try {
-      const stats = await fetchMenaChinaStats();
-      if (stats.length === 0) {
-        throw new Error('empty');
-      }
-      this.renderStats(stats);
-    } catch {
-      const fallback = getFallbackMenaChinaStats();
-      this.renderStats(fallback);
-    }
+    const liveStats = await fetchMenaChinaStats();
+    // Merge live data on top of fallback so we always show all metrics
+    const fallback = getFallbackMenaChinaStats();
+    const merged = fallback.map((f) => {
+      const live = liveStats.find((l) => l.label === f.label);
+      return live ?? f;
+    });
+    // Append any extra live stats not in fallback
+    const extra = liveStats.filter((l) => !fallback.some((f) => f.label === l.label));
+    this.renderStats([...merged, ...extra]);
   }
 
   private renderStats(stats: TradeStat[]): void {
